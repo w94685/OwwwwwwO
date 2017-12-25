@@ -27,7 +27,7 @@ let lineEvent = function(event){
         if(event.type === 'message'){
             if(event.message.type === 'text'){
                 let text = event.message.text
-                if(/[Hh]i | 嗨/.test(text)){
+                if(/[Hh]i | 嗨/){
                     let response = 'Hi'
                     reply(event, response).then(function(){
                         resolve()
@@ -35,12 +35,7 @@ let lineEvent = function(event){
                         reject()
                     })
                 }else if(/[Hh]elp | 幫助/){
-                    let response = 'Help me'
-                    reply(event, response).then(function(){
-                        resolve()
-                    }).catch(function(){
-                        reject()
-                    })
+
                 }
             }else if(event.message.type === 'image'){
 
